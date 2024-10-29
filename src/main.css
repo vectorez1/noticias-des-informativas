@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{
+    --main-color:#920C00;
+    --s-main-color:#fff1f0;
+}
+
+*{
+    font-family: 'Century Gothic';
+}
+
+nav{
+    font-weight: bold;
+}
+
+nav a{
+    background: var(--main-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: max-content auto max-content;
+}
+
+.news-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column on very small screens */
+    gap: 1rem; /* Optional gap between items */
+}
+
+.news-page button:hover{
+    color: var(--main-color);
+
+}
+
+/* For screens 400px and larger */
+@media (min-width: 350px) {
+    .news-list {
+        grid-template-columns: 1fr; /* Still 1 column until 500px */
+    }
+}
+
+/* For screens 500px and larger */
+@media (min-width: 750px) {
+    .news-list {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+}
+
+/* For screens 1000px and larger */
+@media (min-width: 1200px) {
+    .news-list {
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+    }
+}
+
+
+.footer{
+    background-color: var(--s-main-color);
+}
